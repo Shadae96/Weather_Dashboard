@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,intial-scale=1.0"/>
     <title>Weather Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="assets/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="./assets/jass.css"></script>
@@ -15,16 +16,47 @@
     <h1>Weather Dashboard</h1>
 </div>
 
-<aside class="aside flex-column align-center bg-light p-5">
+<div class="flex-column align-center bg-light p-5">
 <div class="search">
 <h2>Search for a city:</h2>
-<input class="search"></input>
-<button>Search</button>
-<div class="citiescontainer">
+<input class="searchInput"></input>
+<button class="search-button">Search</button>
+<!-- <div class="citiescontainer">
+</div> -->
 </div>
 </div>
-</aside>
+
+<main class="maindisplay">
+    <div class="input-group-append">
+        <button class="button btn-outline-secondary bg-primary searchButton"
+            id="button-addon2"><i class ="fas fa-search"></i></button>
+    </div>
+
+    <ul class= "list-group">
+    </ul>
+
+    <!-- Appends current weather forecast-->
+    <div class="col mt-4 mr-5">
+        <div class="card currentCard pb-2 pt-1">
+            <h5 class="card-title mt-2 text-center">Current Forecast</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card pb-5 fiveDayCard pl-5">
+                <!-- Appends 5 day forecast-->
+                <h5 class="card-title mt-2 mr-5">5-Day Forecast </h5>
+                <div class="row">
+                    <div class="col fiveDayOne">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 <script src="assets/script.js"></script>
+
 </body>
 
 </html>
