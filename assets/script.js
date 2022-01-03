@@ -29,6 +29,11 @@ else { $.ajax({
     method: "Get"})
 
     .then(function (response) {console.log(response)
+        var cityName = $(".list-group").addClass("list-group-item");
+        cityName.append ("<li>" + response.name + "</li>");
+        // store name to localStorage
+        var local = localStorage.setItem(keyCount, response.name),
+        keyCount= keyCount + 1;
 
     }) }
 
