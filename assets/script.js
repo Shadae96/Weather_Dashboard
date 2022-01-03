@@ -35,6 +35,19 @@ else { $.ajax({
         var local = localStorage.setItem(keyCount, response.name),
         keyCount= keyCount + 1;
 
+        //Add current weather
+
+        var currentCard = $(".currentCard").append("<div>").addClass("card-body");
+        currentCard.empty();
+        var currentName = currentCard.append("<p>");
+        currentCard.append(currentName);
+
+        // Add current Date
+
+        var timeUTC = new Date(response.dt *1000)
+
+        currentName.append(response.name + " " +timeUTC.toLocaleDateString("en-US"));
+
     }) }
 
 });
