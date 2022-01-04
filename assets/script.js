@@ -47,6 +47,54 @@ else { $.ajax({
         var timeUTC = new Date(response.dt *1000)
 
         currentName.append(response.name + " " +timeUTC.toLocaleDateString("en-US"));
+        //Add image for weather condition
+        currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+
+        // Add current temperature
+
+        var currentTemp = currentName.append("<p>");
+        currentTemp.append(currentTemp);
+        currentTemp.append("<p>" + "Temperature: " + response.main.temp + " \u2109" + "<p>")
+
+        // Add current Wind Speed
+
+        currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + " MPH" + "<p>")
+
+        // Add current Humidity
+
+        currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "<p>")
+
+    // How to get UVI info using open api... How to convert city name into lat and lon?
+
+
+
+
+
+    //Five Day Forecast
+        $.ajax({
+            url: urlFiveDay,
+            method: "GET"
+
+        })
+        .then(function(response){
+            var day= [0,8,16,24,32];
+                var fiveDayCard = $(".fiveDayCard").addClass("card-body");
+                var fiveDayDiv= $(".fiveDayOne").addClass("card-body");
+                fiveDayDiv.empty()
+
+      // for each of the five days
+
+      day.forEach(function(i){
+          var FiveDayTimeUTC1= new Date(response.list[i].dt *1000);
+          FIveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
+
+          fiveDayDiv.append("<div class=fiveDayColor>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" +  "<p>" + "Wind: " + response.list[i].wind.speed + " MPH" + "</p>" + "</div>");
+
+
+      })
+
+        })
+
 
     }) }
 
