@@ -6,17 +6,27 @@
     <title>Weather Dashboard</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="assets/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="./assets/jass.css"></script>
+    <script src="https://kit.fontawesome.com/d3bce829f3.js" crossorigin="anonymous"></script>
+
+
+
+    <div class="card-body text-center navbar-dark bg-grey">
+        <h1>Weather Dashboard</h1>
+    </div>
 </head>
 
-<body class= "container flex-row align-center justify-center min-100-vh bg-primary">
+<body>
 
-<div class="title col text-center">
-    <h1>Weather Dashboard</h1>
-</div>
+<div class= "container flex-row align-center justify-center min-100-vh bg-white">
 
-<div class="flex-column align-center bg-light p-5">
+
+<div class="left-container col-4 bg-light p-5">
 <div class="search">
 <h2>Search for a city:</h2>
 <input class="searchInput"></input>
@@ -28,21 +38,23 @@
 
 <main class="maindisplay">
     <div class="input-group-append">
-        <button class="button btn-outline-secondary bg-primary searchButton"
-            id="button-addon2"><i class ="fas fa-search"></i></button>
+        <!-- <button class="button btn-outline-secondary bg-primary searchButton"
+            id="button-addon2"><i class ="fas fa-search"></i></button> -->
     </div>
 
-    <ul class= "list-group">
+    <ul class= "list-group col left-container col-4 bg-light p-5" >
     </ul>
 
     <!-- Appends current weather forecast-->
-    <div class="col mt-4 mr-5">
-        <div class="card currentCard pb-2 pt-1">
+    <div class= "">
+    <div class="col-md-8 col-s-12 display-flex currentdesign">
+        <div class="card currentdesign currentCard jumbotron mr-2 mt-2">
             <h5 class="card-title mt-2 text-center">Current Forecast</h5>
         </div>
     </div>
+    </div>
     <div class="row">
-        <div class="col mt-4">
+        <div class="row col mt-4">
             <div class="card pb-5 fiveDayCard pl-5">
                 <!-- Appends 5 day forecast-->
                 <h5 class="card-title mt-2 mr-5">5-Day Forecast </h5>
@@ -55,9 +67,9 @@
             </div>
         </div>
     </div>
+</div>
 <script src="assets/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
 </body>
 
 </html>
